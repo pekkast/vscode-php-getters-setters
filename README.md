@@ -2,6 +2,16 @@
 
 > Fast generator of getters and setters for your PHP class properties.
 
+## Direct usage from source
+1. ``git clone https://github.com/pekkast/vscode-php-getters-setters.git``
+2. ``cd vscode-php-getters-setters``
+3. ``npm i && npm run build``
+4. Note the generated vsix-file location
+5. Install to vscode
+    * Ctrl+Shift+P > type vsix
+    * Select _Extensions: Install from vsix_
+    * Select previously generated vsix-file
+
 ![Demo](images/demo.gif)
 
 ## Features
