@@ -7,6 +7,7 @@ export default class Property {
     private description: string = null;
     private indentation: string;
     private name: string;
+    private docType: string = null;
     private type: string = null;
     private typeHint: string = null;
     private pseudoTypes = ['mixed', 'number', 'callback', 'array|object', 'void', 'null', 'integer'];
@@ -35,6 +36,18 @@ export default class Property {
         const activeLine = editor.document.lineAt(activeLineNumber);
 
         property.indentation = activeLine.text.substring(0, activeLine.firstNonWhitespaceCharacterIndex);
+
+        const propertyDefinitionParts = activeLine.text.trim().split(' ');
+
+        if (propertyDefinitionParts.length > 2) {
+            const phpType = propertyDefinitionParts[1] || '';
+            const type = phpType.startsWith('?') ? phpType.slice(1) + '|null' : phpType;
+
+            property.docType = type;
+            property.setType(phpType);
+
+            return property;
+        }
 
         const previousLineNumber = activeLineNumber - 1;
 

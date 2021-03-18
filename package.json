@@ -60,7 +60,10 @@
                     "description": "How many spaces should we add after a @return tag?"
                 },
                 "phpGettersSetters.templatesDir": {
-                    "type": ["string", "null"],
+                    "type": [
+                        "string",
+                        "null"
+                    ],
                     "default": null,
                     "description": "Folder where custom templates are stored"
                 },
@@ -132,7 +135,8 @@
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
         "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+        "test": "npm run compile && node ./node_modules/vscode/bin/test",
+        "build": "npx vsce package"
     },
     "devDependencies": {
         "typescript": "^2.6.1",

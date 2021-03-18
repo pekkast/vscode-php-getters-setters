@@ -2,6 +2,7 @@
 All notable changes to the "php-getters-setters" extension will be documented in this file.
 
 ## [Unreleased]
+- Enable typings from type hints
 
 ## [1.2.0] - 2017-04-29
 - Added support for custom templates. See #3, #10, #11
